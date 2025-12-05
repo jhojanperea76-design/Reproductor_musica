@@ -1,0 +1,37 @@
+package Modelo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListaReproduccion {
+    private String nombre;
+    private List<Cancion> canciones;
+
+    public ListaReproduccion(String nombre) {
+        this.nombre = nombre;
+        this.canciones = new ArrayList<>();
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public List<Cancion> getCanciones() {
+        return canciones;
+    }
+
+    public void agregarCancion(Cancion c) {
+        if (c != null && !canciones.contains(c)) {
+            canciones.add(c);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return nombre + " (" + canciones.size() + " canciones)";
+    }
+}
