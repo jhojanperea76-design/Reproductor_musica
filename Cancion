@@ -1,0 +1,43 @@
+package Modelo;
+
+public class Cancion {
+    private String titulo;
+    private double duracion;
+    private Artista artista;
+
+    public Cancion(String titulo, double duracion, Artista artista) {
+        this.titulo = titulo;
+        this.duracion = duracion;
+        this.artista = artista;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public double getDuracion() {
+        return duracion;
+    }
+
+    public void setDuracion(double duracion) {
+        this.duracion = duracion;
+    }
+
+    public Artista getArtista() {
+        return artista;
+    }
+
+    public void setArtista(Artista artista) {
+        this.artista = artista;
+    }
+
+    @Override
+    public String toString() {
+        String art = (artista != null) ? artista.getNombre() : "Sin artista";
+        return titulo + " - " + art + " (" + duracion + " min)";
+    }
+}
